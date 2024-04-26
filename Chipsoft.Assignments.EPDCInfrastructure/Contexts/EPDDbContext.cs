@@ -1,7 +1,11 @@
-﻿using System.Reflection;
+﻿#region
+
+using System.Reflection;
 using Chipsoft.Assignments.EPDApplication.Interfaces;
 using Chipsoft.Assignments.EPDDomain;
 using Microsoft.EntityFrameworkCore;
+
+#endregion
 
 namespace Chipsoft.Assignments.EPDCInfrastructure.Contexts
 {

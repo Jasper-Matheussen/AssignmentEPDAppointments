@@ -1,5 +1,9 @@
+#region
+
 using Chipsoft.Assignments.EPDDomain;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+
+#endregion
 
 namespace Chipsoft.Assignments.EPDApplication.Interfaces;
 

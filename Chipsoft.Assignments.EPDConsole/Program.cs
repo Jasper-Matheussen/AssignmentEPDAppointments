@@ -1,19 +1,15 @@
-﻿using System.Reflection;
-using AutoMapper;
+﻿#region
+
 using Chipsoft.Assignments.EPDApplication.CQRS.Appointments.Queries;
-using Chipsoft.Assignments.EPDApplication.CQRS.Patients.Commands;
-using Chipsoft.Assignments.EPDApplication.Exceptions;
 using Chipsoft.Assignments.EPDApplication.Extensions;
-using Chipsoft.Assignments.EPDApplication.Interfaces;
-using Chipsoft.Assignments.EPDApplication.mappings;
-using Chipsoft.Assignments.EPDCInfrastructure;
 using Chipsoft.Assignments.EPDCInfrastructure.Contexts;
 using Chipsoft.Assignments.EPDCInfrastructure.Extensions;
 using Chipsoft.Assignments.EPDConsole.Services;
-using Chipsoft.Assignments.EPDContracts.Patients;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+
+#endregion
 
 namespace Chipsoft.Assignments.EPDConsole
 {

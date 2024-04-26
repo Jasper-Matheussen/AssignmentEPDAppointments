@@ -1,9 +1,13 @@
+#region
+
 using Chipsoft.Assignments.EPDApplication.Exceptions;
 using Chipsoft.Assignments.EPDApplication.Interfaces;
 using Chipsoft.Assignments.EPDContracts.Physician;
 using Chipsoft.Assignments.EPDDomain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+
+#endregion
 
 namespace Chipsoft.Assignments.EPDApplication.CQRS.Physicians.Commands.DeletePhysician;
 

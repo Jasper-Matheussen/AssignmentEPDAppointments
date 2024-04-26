@@ -1,3 +1,5 @@
+#region
+
 using System.Reflection;
 using Chipsoft.Assignments.EPDApplication.Behaviours;
 using Chipsoft.Assignments.EPDApplication.CQRS.Appointments.Commands;
@@ -13,6 +15,8 @@ using Chipsoft.Assignments.EPDDomain;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+
+#endregion
 
 namespace Chipsoft.Assignments.EPDApplication.Extensions;
 

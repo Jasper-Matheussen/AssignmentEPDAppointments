@@ -1,9 +1,12 @@
+#region
+
 using AutoMapper;
 using Chipsoft.Assignments.EPDApplication.Interfaces;
 using Chipsoft.Assignments.EPDContracts.Patients;
 using Chipsoft.Assignments.EPDDomain;
-using FluentValidation;
 using MediatR;
+
+#endregion
 
 namespace Chipsoft.Assignments.EPDApplication.CQRS.Patients.Commands;
 

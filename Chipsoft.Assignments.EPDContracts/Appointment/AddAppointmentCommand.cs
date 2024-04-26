@@ -1,4 +1,8 @@
+#region
+
 using MediatR;
+
+#endregion
 
 namespace Chipsoft.Assignments.EPDContracts.Appointment;
 
