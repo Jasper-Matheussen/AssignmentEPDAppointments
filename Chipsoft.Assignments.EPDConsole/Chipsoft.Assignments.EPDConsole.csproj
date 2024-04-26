@@ -17,4 +17,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Chipsoft.Assignments.EPDCInfrastructure\Chipsoft.Assignments.EPDCInfrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

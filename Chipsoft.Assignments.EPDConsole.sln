@@ -5,6 +5,20 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chipsoft.Assignments.EPDConsole", "Chipsoft.Assignments.EPDConsole\Chipsoft.Assignments.EPDConsole.csproj", "{C3E36DFE-5F45-40C4-BCF8-CEACF7987B54}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{E8E9D843-9844-431F-A860-4A68FBC14FF8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{FF5B4F11-645D-4ED7-BFE4-5ECC72154D29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{16D0A825-BBB0-4E3A-B74C-ECCE7E8B8FB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chipsoft.Assignments.EPDCInfrastructure", "Chipsoft.Assignments.EPDCInfrastructure\Chipsoft.Assignments.EPDCInfrastructure.csproj", "{BD7BA02B-2134-4A88-A8E9-463D3AFFCF8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chipsoft.Assignments.EPDApplication", "Chipsoft.Assignments.EPDApplication\Chipsoft.Assignments.EPDApplication.csproj", "{112EF22B-8C42-48FC-A6E9-9EC05365EC8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chipsoft.Assignments.EPDDomain", "Chipsoft.Assignments.EPDDomain\Chipsoft.Assignments.EPDDomain.csproj", "{625C4ABC-A147-47A3-BF1C-D27BD0E63488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chipsoft.Assignments.EPDContracts", "Chipsoft.Assignments.EPDContracts\Chipsoft.Assignments.EPDContracts.csproj", "{7A1D0E82-9869-4A8B-BB96-A407112A9949}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +29,34 @@ Global
 		{C3E36DFE-5F45-40C4-BCF8-CEACF7987B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3E36DFE-5F45-40C4-BCF8-CEACF7987B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3E36DFE-5F45-40C4-BCF8-CEACF7987B54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD7BA02B-2134-4A88-A8E9-463D3AFFCF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD7BA02B-2134-4A88-A8E9-463D3AFFCF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD7BA02B-2134-4A88-A8E9-463D3AFFCF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD7BA02B-2134-4A88-A8E9-463D3AFFCF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{112EF22B-8C42-48FC-A6E9-9EC05365EC8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{112EF22B-8C42-48FC-A6E9-9EC05365EC8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{112EF22B-8C42-48FC-A6E9-9EC05365EC8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{112EF22B-8C42-48FC-A6E9-9EC05365EC8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{625C4ABC-A147-47A3-BF1C-D27BD0E63488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625C4ABC-A147-47A3-BF1C-D27BD0E63488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625C4ABC-A147-47A3-BF1C-D27BD0E63488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625C4ABC-A147-47A3-BF1C-D27BD0E63488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A1D0E82-9869-4A8B-BB96-A407112A9949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A1D0E82-9869-4A8B-BB96-A407112A9949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A1D0E82-9869-4A8B-BB96-A407112A9949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A1D0E82-9869-4A8B-BB96-A407112A9949}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4DC831ED-E6E9-4CB5-A190-1D884564F3AE}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C3E36DFE-5F45-40C4-BCF8-CEACF7987B54} = {E8E9D843-9844-431F-A860-4A68FBC14FF8}
+		{BD7BA02B-2134-4A88-A8E9-463D3AFFCF8F} = {16D0A825-BBB0-4E3A-B74C-ECCE7E8B8FB5}
+		{112EF22B-8C42-48FC-A6E9-9EC05365EC8C} = {FF5B4F11-645D-4ED7-BFE4-5ECC72154D29}
+		{625C4ABC-A147-47A3-BF1C-D27BD0E63488} = {FF5B4F11-645D-4ED7-BFE4-5ECC72154D29}
+		{7A1D0E82-9869-4A8B-BB96-A407112A9949} = {FF5B4F11-645D-4ED7-BFE4-5ECC72154D29}
 	EndGlobalSection
 EndGlobal

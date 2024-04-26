@@ -1,40 +1,135 @@
-﻿namespace Chipsoft.Assignments.EPDConsole
+﻿using System.Reflection;
+using AutoMapper;
+using Chipsoft.Assignments.EPDApplication.CQRS.Appointments.Queries;
+using Chipsoft.Assignments.EPDApplication.CQRS.Patients.Commands;
+using Chipsoft.Assignments.EPDApplication.Exceptions;
+using Chipsoft.Assignments.EPDApplication.Extensions;
+using Chipsoft.Assignments.EPDApplication.Interfaces;
+using Chipsoft.Assignments.EPDApplication.mappings;
+using Chipsoft.Assignments.EPDCInfrastructure;
+using Chipsoft.Assignments.EPDCInfrastructure.Contexts;
+using Chipsoft.Assignments.EPDCInfrastructure.Extensions;
+using Chipsoft.Assignments.EPDConsole.Services;
+using Chipsoft.Assignments.EPDContracts.Patients;
+using FluentValidation;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Chipsoft.Assignments.EPDConsole
 {
     public class Program
     {
         //Don't create EF migrations, use the reset db option
         //This deletes and recreates the db, this makes sure all tables exist
-
-        private static void AddPatient()
+        private static IMediator? _mediator;
+        private static async Task AddPatient()
         {
-            //Do action
-            //return to show menu again.
+            bool succes;
+            var patient = ConsoleService.GetPatientDetails();
+            //TODO: Exception handling middleware toevoegen (geen tijd meer)
+            try
+            {
+                succes = await _mediator?.Send(patient);
+            }
+            catch (ValidationException e)
+            {
+                Console.WriteLine(e.Message);
+                succes = false;
+            }
+            
+            ConsoleService.ShowSuccessOrFailedMessage(succes, "Patient is toegevoegd", "Patient is niet toegevoegd probeer opnieuw");
+        }
+        
+        private static async Task ShowAppointment()
+        {
+            var appointments = await _mediator.Send(new GetAllAppointmentsQuery());
+            ConsoleService.ShowAllAppointments(appointments);
         }
 
-        private static void ShowAppointment()
+        private static async Task AddAppointment()
         {
+            bool succes;
+            var appointment = ConsoleService.GetAppointmentDetails();
+            try
+            {
+                succes = await _mediator?.Send(appointment);
+            }
+            catch (Exception e)
+            {
+                Console.Clear();
+                Console.WriteLine(e.Message);
+                succes = false;
+            }
+            
+            ConsoleService.ShowSuccessOrFailedMessage(succes, "Afspraak is toegevoegd", "Afspraak is niet toegevoegd probeer opnieuw");
         }
 
-        private static void AddAppointment()
+        private static async Task DeletePhysician()
         {
+            bool succes;
+            var physician = ConsoleService.GetPhysicianInformationToDelete();
+            try
+            {
+                succes = await _mediator?.Send(physician);
+            }
+            catch (Exception e)
+            {
+                Console.Clear();
+                Console.WriteLine(e.Message);
+                succes = false;
+            }
+            
+            ConsoleService.ShowSuccessOrFailedMessage(succes, "Arts is verwijderd", "Arts is niet verwijderd probeer opnieuw");
         }
 
-        private static void DeletePhysician()
+        private static async Task AddPhysician()
         {
+            bool succes;
+            var physician = ConsoleService.GetPhysicianDetails();
+            try
+            {
+                succes = await _mediator?.Send(physician);
+            }
+            catch (Exception e)
+            {
+                Console.Clear();
+                Console.WriteLine(e.Message);
+                succes = false;
+            }
+
+            ConsoleService.ShowSuccessOrFailedMessage(succes, "Arts is toegevoegd", "Arts is niet toegevoegd probeer opnieuw");
         }
 
-        private static void AddPhysician()
+        private static async Task DeletePatient()
         {
-        }
-
-        private static void DeletePatient()
-        {
+            bool succes;
+            var patient = ConsoleService.GetPatientInformationToDelete();
+            
+            try
+            {
+                succes = await _mediator?.Send(patient)!;
+            }
+            catch (Exception e)
+            {
+                Console.Clear();
+                Console.WriteLine(e.Message);
+                succes = false;
+            }
+            
+            ConsoleService.ShowSuccessOrFailedMessage(succes, "Patient is verwijderd", "Patient is niet verwijderd probeer opnieuw");
         }
 
 
         #region FreeCodeForAssignment
         static void Main(string[] args)
         {
+            var serviceProvider = new ServiceCollection()
+                .RegisterApplication()
+                .RegisterInfrastructure()
+                .BuildServiceProvider();
+             
+            _mediator = serviceProvider.GetService<IMediator>();
+            
             while (ShowMenu())
             {
                 //Continue
