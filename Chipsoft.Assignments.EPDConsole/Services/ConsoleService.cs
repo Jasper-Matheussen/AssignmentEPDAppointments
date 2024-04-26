@@ -183,7 +183,10 @@ public static class ConsoleService
             Console.Clear();
         }
         Console.WriteLine(isSuccess ? successMessage : failedMessage);
-        Task.Delay(2000).Wait();
+
+        Console.WriteLine("");
+        Console.WriteLine("Druk op een toets om terug te gaan");
+        Console.ReadKey();
     }
 
     private static void LoopThruAppointmentsAndShow(List<Appointment> appointments)
